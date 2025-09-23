@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Upwork Timesheet Downloader",
+  "version": "1.0",
+  "description": "Download all screenshots from Upwork timesheets with custom filenames.",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.upwork.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
