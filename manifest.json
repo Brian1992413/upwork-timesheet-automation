@@ -1,22 +1,30 @@
 {
   "manifest_version": 3,
-  "name": "Upwork Timesheet Downloader",
-  "version": "1.0",
-  "description": "Download all screenshots from Upwork timesheets with custom filenames.",
+  "name": "Upwork Timesheet Automation",
+  "version": "1.2",
+  "description": "Automate timesheet screenshot collection from Upwork",
   "permissions": [
-    "activeTab",
+    "tabs",
+    "storage",
     "downloads",
     "scripting"
   ],
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "host_permissions": [
+    "https://www.upwork.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Timesheet Automation"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.upwork.com/*"],
+      "matches": [
+        "https://www.upwork.com/nx/reports/client/timesheet/*",
+        "https://www.upwork.com/nx/wm/workroom/*"
+      ],
       "js": ["content.js"]
     }
   ]

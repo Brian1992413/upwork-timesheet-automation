@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Upwork Downloader</title>
+    <meta charset="utf-8" />
+    <title>Timesheet Automation</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 12px; width: 220px; }
+      button { width: 100%; padding: 8px; margin: 6px 0; font-size: 14px; }
+    </style>
   </head>
   <body>
-    <button id="download">Download Screenshots</button>
+    <h4>Timesheet Automation</h4>
+    <button id="startBtn">Start Download</button>
+    <button id="stopBtn">Stop Download</button>
+    <div id="status" style="margin-top:8px;font-size:13px;color:#333;"></div>
     <script src="popup.js"></script>
   </body>
 </html>
